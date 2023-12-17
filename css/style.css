@@ -1,0 +1,57 @@
+body {
+  background-color: #FFF1D7;
+  margin: 0;
+  background-image: url(/img/bg.png);
+  background-repeat: no-repeat;
+}
+body header {
+  background-image: url(/img/bg.png);
+  background-repeat: no-repeat;
+}
+body header h1 {
+  font-size: 128px;
+  color: #FFDE9E;
+  font-family: "Inspiration";
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  padding-top: 7px;
+  line-height: 1;
+}
+body main {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 290px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+body main .cookieJar {
+  display: flex;
+}
+body main .game {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+body main .game .btn {
+  width: 276px;
+  height: 69px;
+  border-radius: 10px;
+  border: 3px solid #5A2012;
+  background-color: #F7B758;
+  font-family: "Irish Grover";
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 5px;
+  font-size: 32px;
+}
+body main .statistics {
+  font-family: "Irish Grover";
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 32px;
+  text-align: center;
+}
+body main .statistics p {
+  margin-bottom: 0;
+}/*# sourceMappingURL=style.css.map */

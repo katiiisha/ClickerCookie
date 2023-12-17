@@ -1,0 +1,61 @@
+body {
+    background-color: #FFF1D7;
+    margin: 0;
+     background-image: url(/img/bg.png);
+        // background-position: center;
+        background-repeat: no-repeat;
+    header{
+        background-image: url(/img/bg.png);
+        // background-position: center;
+        background-repeat: no-repeat;
+        // height: 470px;
+
+    h1{
+        font-size: 128px;
+        color: #FFDE9E;
+        font-family: 'Inspiration';
+        margin: 0;
+        text-align: center;
+        font-weight: 400;
+        padding-top: 7px;
+        line-height: 1;
+    }
+    }
+    main{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 290px;
+        margin-bottom: 20px;
+        align-items: center;
+        .cookieJar {
+            display: flex;
+        }
+        .game {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            .btn{
+                width: 276px;
+                height: 69px;
+                border-radius: 10px;
+                border: 3px solid #5A2012;
+                background-color: #F7B758;
+                font-family: 'Irish Grover';
+                text-transform:uppercase;
+                font-weight: 300;
+                letter-spacing: 5px;
+                font-size: 32px;
+            }
+        }
+        .statistics {
+            font-family: 'Irish Grover';
+            font-weight: 700;
+            letter-spacing: 5px;
+            font-size: 32px;
+            text-align: center;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
