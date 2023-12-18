@@ -19,19 +19,28 @@ body header h1 {
   line-height: 1;
 }
 body main {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 290px;
-  margin-bottom: 20px;
-  align-items: center;
+  margin-bottom: 100px;
 }
 body main .cookieJar {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+body main .cookieJar img {
+  width: 200px;
 }
 body main .game {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 35px;
+  height: 391px;
+}
+body main .game .imgCookie {
+  height: 298px;
 }
 body main .game .btn {
   width: 276px;
@@ -44,13 +53,30 @@ body main .game .btn {
   font-weight: 300;
   letter-spacing: 5px;
   font-size: 32px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+body main .game .btn:hover {
+  transform: scale(1.05);
+}
+body main .game .timer {
+  font-size: 64px;
+  color: #5A2012;
+  font-family: "Irish Grover";
+  text-align: center;
+  margin: 0;
 }
 body main .statistics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: "Irish Grover";
   font-weight: 700;
   letter-spacing: 5px;
   font-size: 32px;
   text-align: center;
+  margin-right: 50px;
 }
 body main .statistics p {
   margin-bottom: 0;
