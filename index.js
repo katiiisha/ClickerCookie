@@ -30,8 +30,8 @@ function timerGame(timer, timerId) {
         imgCookie.src = 'img/CookieGameOver.png';
         imgCookie.style.cursor = 'default';
         speedText.textContent = 'Best speed:'
-        clikerSpeeb.textContent = bestSpeed;
-        bestSpeed = 0;
+        clikerSpeeb.textContent = Math.max(...bestSpeed)
+        bestSpeed = [];
         clickLast = 0;
         clearInterval(timerId);
     }
@@ -40,7 +40,7 @@ function timerGame(timer, timerId) {
 
 let index = 0;
 let clickLast = 0;
-let bestSpeed = 0;
+let bestSpeed = [];
 function ClickerCookie() {
     const imgSrc = ['img/cookieStart.png', 'img/cookiePlay.png'];
     let counter = clickerCounter.textContent;
@@ -51,10 +51,11 @@ function ClickerCookie() {
     let clickNow = new Date();
     let clickTime = Number(clickNow) - Number(clickLast);
     let speed = Math.abs((1 / clickTime) * 1000).toFixed(2);
-    speed > bestSpeed ? bestSpeed = speed : bestSpeed
+    bestSpeed.push(speed)
     clickLast = Number(clickNow);
     clikerSpeeb.textContent = speed;
 }
+console.log(bestSpeed);
 
 
 
