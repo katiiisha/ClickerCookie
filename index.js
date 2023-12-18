@@ -2,30 +2,21 @@ const btn = document.querySelector('.btn');
 const imgCookie = document.querySelector('.imgCookie');
 const clickerCounter = document.querySelector('.click');
 const clikerSpeeb = document.querySelector('.speed');
+const speedText = document.querySelector('.speedText')
 btn.onclick = StartGame
+
 function StartGame() {
     let timer = document.createElement('p');
     timer.textContent = '0:10';
     timer.className = 'timer';
     btn.replaceWith(timer);
+    clickerCounter.textContent = '0';
+    clikerSpeeb.textContent = '0';
+    speedText.textContent = 'Сlicks per second:'
     let timerId = setInterval(() => {timerGame(timer, timerId)}, 1000)
     imgCookie.style.cursor = 'pointer';
-    let counter = 0;
-    let clickLast = 0;
-    let index = 0; 
-    const imgSrc = ['img/cookieStart.png', 'img/cookiePlay.png'];
-    imgCookie.src = imgSrc[index];
-    imgCookie.onclick = function () {
-        index === 0 ? index = 1 : index = 0;
-        imgCookie.src = imgSrc[index];
-        counter += 1;
-        clickerCounter.textContent = counter;
-        let clickNow = new Date();
-        let clickTime = Number(clickNow) - Number(clickLast);
-        let speed = Math.abs((1 / clickTime) * 1000).toFixed(2);
-        clickLast = Number(clickNow);
-        clikerSpeeb.textContent = speed;
-    };
+    imgCookie.src = 'img/cookieStart.png';
+    imgCookie.onclick = ClickerCookie
 }
 
 function timerGame(timer, timerId) {
@@ -38,8 +29,31 @@ function timerGame(timer, timerId) {
         imgCookie.onclick = false;
         imgCookie.src = 'img/CookieGameOver.png';
         imgCookie.style.cursor = 'default';
+        speedText.textContent = 'Best speed:'
+        clikerSpeeb.textContent = bestSpeed;
+        bestSpeed = 0;
+        clickLast = 0;
         clearInterval(timerId);
     }
+}
+
+
+let index = 0;
+let clickLast = 0;
+let bestSpeed = 0;
+function ClickerCookie() {
+    const imgSrc = ['img/cookieStart.png', 'img/cookiePlay.png'];
+    let counter = clickerCounter.textContent;
+    index === 0 ? index = 1 : index = 0;
+    imgCookie.src = imgSrc[index];
+    counter = +counter + 1;
+    clickerCounter.textContent = counter;
+    let clickNow = new Date();
+    let clickTime = Number(clickNow) - Number(clickLast);
+    let speed = Math.abs((1 / clickTime) * 1000).toFixed(2);
+    speed > bestSpeed ? bestSpeed = speed : bestSpeed
+    clickLast = Number(clickNow);
+    clikerSpeeb.textContent = speed;
 }
 
 
