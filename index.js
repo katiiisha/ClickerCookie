@@ -37,7 +37,6 @@ function timerGame(timer, timerId) {
     }
 }
 
-
 let index = 0;
 let clickLast = 0;
 let bestSpeed = [];
@@ -55,7 +54,7 @@ function ClickerCookie() {
     clickLast = Number(clickNow);
     clikerSpeeb.textContent = speed;
 }
-console.log(bestSpeed);
+
 
 
 
