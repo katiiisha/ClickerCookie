@@ -40,6 +40,7 @@ function timerGame(timer, timerId) {
 let index = 0;
 let clickLast = 0;
 let bestSpeed = [];
+
 function ClickerCookie() {
     const imgSrc = ['img/cookieStart.png', 'img/CookiePlay.png'];
     let counter = clickerCounter.textContent;
