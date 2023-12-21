@@ -41,9 +41,9 @@ let index = 0;
 let clickLast = 0;
 let bestSpeed = [];
 function ClickerCookie() {
-    const imgSrc = ['img/cookieStart.png', '../img/СookiePlay.png'];
+    const imgSrc = ['img/cookieStart.png', 'img/CookiePlay.png'];
     let counter = clickerCounter.textContent;
-    index === 0 ? index = 1 : index = 0;
+    index === 0 ? index = 1 : index = 0;    
     imgCookie.src = imgSrc[index];
     counter = +counter + 1;
     clickerCounter.textContent = counter;
